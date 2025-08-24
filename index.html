@@ -6,37 +6,31 @@
   <title>M.Joyce Trading Ltd — Nutritious Porridge Flours</title>
   <meta name="description" content="IFU YIGIKOMA NZIZA CYANE YIMVANGE — amasaka, ingano, ibigori, soya. Hygienically packed porridge flours by M.Joyce Trading LTD. Delivery across Kigali and all provinces in Rwanda." />
   <meta name="theme-color" content="#2a7d2e" />
-  <meta property="og:title" content="IFU YIGIKOMA NZIZA CYANE YIMVANGE" />
-  <meta property="og:description" content="amasaka, ingano, ibigori, soya | irimo intunga mubiri nyinshi cyane" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="your-flour-image.jpg" />
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
   <style>
-    
+    /* ===== ROOT VARIABLES ===== */
     :root{
-      --belt-height: 60px;                 /* height of the top slogan belt */
+      --belt-height: 60px;
       --brand:#2a7d2e; --brand-2:#00b4d8; --accent:#188d14; --accent-2:lab(42.46% -38.3 17.46);
-      --deep:#0b1b16; --ink:#1f2937; --muted:#6b7280; --cream:hsla(246, 43%, 90%, 0.839); --sheet:lab(95.9% -1.11 -2.03); --white:#ffffff;
+      --deep:#0b1b16; --ink:#1f2937; --muted:#6b7280; --white:#ffffff;
       --bg-gradient:linear-gradient(135deg,#fef9f0,hsl(200, 39%, 95%));
-      --ring: 0 10px 30px rgba(0,0,0,.12);
-      --belt-grad: linear-gradient(90deg,#8B4513,#FFD166,hsl(258, 87%, 49%)); /* brown → yellow → chocolate white */
+      --ring:0 10px 30px rgba(0,0,0,.12);
+      --belt-grad: linear-gradient(90deg,#8B4513,#FFD166,hsl(258, 87%, 49%));
     }
 
-    /* Base */
+    /* ===== BASE ===== */
     *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth; scroll-padding-top: calc(var(--belt-height) + 84px);} /* ensure anchors don't hide under fixed headers */
+    html{scroll-behavior:smooth; scroll-padding-top: calc(var(--belt-height) + 84px);}
     body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg-gradient);overflow-x:hidden}
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block;border-radius:16px}
     .container{width:min(1180px,92%);margin-inline:auto}
     .section{padding:80px 0;position:relative;opacity:0;transform:translateY(40px);transition:all .8s ease}
     .section.is-visible{opacity:1;transform:translateY(0)}
 
-    /* Buttons */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:12px 22px;border-radius:999px;border:2px solid transparent;font-weight:700;letter-spacing:.2px;cursor:pointer;text-decoration:none;transition:.25s ease}
+    /* ===== BUTTONS ===== */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:12px 22px;border-radius:999px;border:2px solid transparent;font-weight:700;letter-spacing:.2px;cursor:pointer;transition:.25s ease}
     .btn-light{background:var(--white);color:#111;border-color:transparent;box-shadow:var(--ring)}
     .btn-light:hover{transform:translateY(-2px)}
     .btn-outline{background:transparent;color:var(--ink);border:2px solid var(--ink)}
@@ -44,419 +38,205 @@
     .btn-brand{background:linear-gradient(135deg,var(--brand),var(--accent-2));color:#fff}
     .btn-brand:hover{filter:saturate(1.15);transform:translateY(-2px)}
 
-    /* ===== Top Slogan Belt ===== */
+    /* ===== TOP SLOGAN BELT ===== */
     .top-slogan{position:fixed;inset:0 0 auto 0;height:var(--belt-height);display:grid;place-items:center;text-align:center;padding:0 10px;z-index:60;color:#1a1a1a;background:var(--belt-grad)}
     .top-slogan .slogan-title{font-weight:800;letter-spacing:.2px;font-size:clamp(14px,3.6vw,20px)}
     .top-slogan .slogan-sub{font-weight:700;opacity:.95;font-size:clamp(12px,3.2vw,16px)}
 
-    /* ===== Main Sticky Header ===== */
+    /* ===== HEADER ===== */
     .site-header{position:sticky;top:var(--belt-height);z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06);transition:.3s;box-shadow:0 4px 14px rgba(0,0,0,.06)}
     .site-header:hover{background:rgba(255,255,255,.98);box-shadow:0 6px 24px rgba(0,0,0,.1)}
-    .site-header{position:sticky;top:var(--belt-height)}
-    .site-header{position:sticky}
-    .site-header{position:sticky}
-    .site-header{position:sticky}
-    .site-header{position:sticky}
-    .site-header{position:sticky}
     .site-header .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:74px;position:relative}
     .site-header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--belt-grad);}
-    .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+    .brand{display:flex;align-items:center;gap:.8rem}
     .logo-mark{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--brand),var(--accent-2));box-shadow:0 8px 18px rgba(42,125,46,.35)}
     .brand-name{font-weight:800;line-height:1.05;font-size:1.2rem}
-    .brand-phone{font-size:.9rem;color:var(--muted);text-decoration:none}
-    .brand-phone:hover{color:var(--ink)}
+    .brand-phone{font-size:.9rem;color:var(--muted)}
     .main-nav{display:flex;gap:18px;font-weight:600}
-    .main-nav a{text-decoration:none;color:var(--ink);padding:6px 10px;border-radius:12px;transition:.2s;font-size:clamp(14px,4vw,16px)}
-    .main-nav a:hover{background:rgba(42,125,46,.12);color:var(--brand)}
+    .main-nav a{padding:6px 10px;border-radius:12px;font-size:clamp(14px,4vw,16px)}
     .nav-toggle{display:none;background:none;border:none;gap:5px;flex-direction:column;cursor:pointer}
     .nav-toggle span{width:28px;height:3px;background:#1a1a1a;border-radius:4px;transition:.25s}
 
-    /* ===== Hero ===== */
-    .hero{position:relative;min-height:92vh;display:grid;align-items:end;overflow:hidden;transition:background 1.2s ease;margin-top:0}
+    /* ===== HERO ===== */
+    .hero{position:relative;min-height:92vh;display:grid;align-items:end;overflow:hidden;margin-top:0}
     .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 35%,rgba(0,0,0,.22) 85%);z-index:1}
     .hero-bg{position:absolute;inset:0;background:url('your-flour-image.jpg') center/cover no-repeat;filter:saturate(1.05);z-index:0}
     .hero-content{position:relative;z-index:2;padding:72px 0 56px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
     .hero-title{font-size:clamp(28px,6vw,52px);font-weight:800;line-height:1.05;margin-bottom:12px}
     .hero-sub{margin-bottom:22px;font-size:clamp(14px,4vw,20px)}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
-    .wave-container{position:absolute;bottom:0;width:100%;overflow:hidden;line-height:0;z-index:1}
-    .wave{position:relative;width:200%;height:200px;background:rgba(255,255,255,.35);border-radius:1000px;opacity:.5;animation:wave 12s infinite linear}
-    .wave.wave2{background:rgba(255,255,255,.25);animation-delay:-6s;opacity:.6}
-    @keyframes wave{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-    /* ===== Layout helpers ===== */
+    /* ===== GRID LAYOUTS ===== */
     .grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:40px}
-    .section-title{font-size:clamp(28px,3.6vw,40px);font-weight:800;color:var(--deep);margin-bottom:10px;text-align:center}
-    .section-sub{color:var(--muted);margin-bottom:28px;text-align:center}
-
-    /* ===== Cards ===== */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+
+    /* ===== CARDS ===== */
     .card{background:linear-gradient(145deg,#fffef9,#fff8ee);border-radius:18px;overflow:hidden;position:relative;box-shadow:0 18px 30px rgba(0,0,0,.12);transition:.3s ease;border:3px solid rgba(0,0,0,.03)}
     .card:hover{transform:translateY(-6px)}
-    .card-badge{position:absolute;top:12px;left:12px;background:var(--card-accent,#ffb703);color:#111;font-weight:900;padding:6px 10px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+    .card-badge{position:absolute;top:12px;left:12px;background:#ffb703;color:#111;font-weight:900;padding:6px 10px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
     .card h3{font-size:1.2rem;padding:12px 14px 6px}
     .card p{padding:0 14px 12px;color:var(--muted);font-size:0.95rem}
     .chip-list{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 12px}
     .chip-list li{list-style:none;background:rgba(255,255,255,.4);backdrop-filter:blur(6px);border-radius:999px;padding:4px 8px;font-size:.8rem;font-weight:500}
-    .card .order{display:flex;justify-content:center;padding:14px}
-    .product-card img {
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  object-fit: cover;
-}
-.product-card img:hover {
-  transform: scale(1.05);
-}
 
-
-    /* ===== Contact & Footer ===== */
+    /* ===== CONTACT & FOOTER ===== */
     .contact-info ul{list-style:none;padding-left:0;margin-bottom:16px;text-align:center}
-    .contact-info ul li{margin-bottom:12px;font-weight:500;font-size:0.95rem}
-    .contact-info ul li a{color:var(--brand);text-decoration:none;font-weight:700}
-    .contact-info ul li a:hover{text-decoration:underline}
+    .contact-info ul li{margin-bottom:12px;font-weight:600;font-size:1rem}
+    .contact-info .btn{margin-top:12px}
+    footer{padding:36px 0;text-align:center;font-size:.9rem;color:var(--muted)}
 
-    .site-footer{background:#222;color:#eee;padding:60px 20px;margin-top:60px}
-    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;align-items:start}
-    .site-footer h4{margin-bottom:12px;color:#fff}
-    .site-footer ul{list-style:none}
-    .site-footer li{margin:8px 0}
-    .site-footer a{color:#bbb;text-decoration:none}
-    .site-footer a:hover{color:#fff;text-decoration:underline}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:24px;padding-top:16px;text-align:center;color:#bbb}
+    /* ===== WHATSAPP FLOAT BUTTON ===== */
+    .whatsapp-btn{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;display:grid;place-items:center;z-index:999;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:.3s}
+    .whatsapp-btn:hover{transform:translateY(-2px)}
 
-    /* ===== Placeholder sections (for footer links) ===== */
-    .placeholder{padding:80px 0;background:linear-gradient(180deg,#fffef9,#fff);}
-    .placeholder .container{max-width:900px}
-    .placeholder h2{font-size:clamp(24px,3.2vw,32px);text-align:center;margin-bottom:10px;color:var(--deep)}
-    .placeholder p{color:var(--muted);text-align:center;margin:0 auto 12px}
+    /* ===== ANIMATIONS ON SCROLL ===== */
+    .section.is-visible{opacity:1;transform:translateY(0)}
 
-    /* ===== Particles / Leaves / Grains ===== */
-    #particles{position:fixed;width:100%;height:100%;pointer-events:none;top:0;left:0;z-index:3}
-    .particle{position:absolute;width:12px;height:12px;background:var(--accent-2);border-radius:50%;opacity:.6;pointer-events:none;animation:float 12s linear infinite}
-    @keyframes float{0%{transform:translateY(0) translateX(0) rotate(0deg)}50%{transform:translateY(-200px) translateX(80px) rotate(180deg)}100%{transform:translateY(-420px) translateX(0) rotate(360deg)}}
-
-    #hero-float{position:absolute;inset:0;z-index:2;pointer-events:none}
-    .leaf, .grain{position:absolute;width:16px;height:16px;opacity:0.75;background-size:contain;background-repeat:no-repeat;animation:fall linear infinite}
-    .leaf{background-image:url('https://source.unsplash.com/32x32/?leaf');width:22px;height:22px;animation-duration:11s}
-    .grain{background-image:url('https://source.unsplash.com/32x32/?grain');width:14px;height:14px;animation-duration:7s}
-    @keyframes fall{0%{transform:translateY(-50px) rotate(0deg);opacity:0}30%{opacity:0.9}100%{transform:translateY(110vh) rotate(360deg);opacity:0}}
-
-    /* ===== WhatsApp Floating Button (Professional SVG) ===== */
-    .whatsapp-btn{position:fixed;right:18px;bottom:18px;background:#25D366;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:70;transition:.3s;cursor:pointer;text-decoration:none}
-    .whatsapp-btn:hover{transform:scale(1.08)}
-    .whatsapp-btn svg{width:34px;height:34px;fill:#fff}
-
-    /* Responsive */
-    @media(max-width:1024px){.grid-2{grid-template-columns:1fr}}
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px){.grid-2{grid-template-columns:1fr;gap:28px}.hero-title{font-size:clamp(24px,6vw,40px)}.hero-sub{font-size:clamp(12px,4vw,16px)}}
     @media(max-width:768px){
-      :root{--belt-height: 72px;} /* a bit taller belt on small screens */
-      .main-nav{display:none}
+      :root{--belt-height:72px}
+      html{scroll-padding-top:calc(var(--belt-height)+72px)}
+      .main-nav{display:none;flex-direction:column;gap:12px}
       .nav-toggle{display:flex}
-      html{scroll-padding-top: calc(var(--belt-height) + 72px);}
+      .hero{min-height:80vh;padding:0 12px}
+      .hero-content{text-align:center;padding-bottom:40px}
+      .hero-cta{justify-content:center;gap:10px;flex-wrap:wrap}
+      .cards{grid-template-columns:1fr;gap:16px}
+      .card h3{font-size:1.1rem}.card p{font-size:0.9rem}.chip-list li{font-size:0.75rem;padding:3px 6px}
+      .contact-form input,.contact-form textarea{padding:10px;font-size:0.9rem}
+      .btn{padding:10px 18px;font-size:0.9rem}
+    }
+    @media(max-width:480px){
+      .hero-title{font-size:clamp(20px,7vw,28px)}.hero-sub{font-size:clamp(10px,4.5vw,14px)}
+      .site-header .brand-name{font-size:1rem}.site-header .brand-phone{font-size:0.8rem}
+      .hero-cta .btn{padding:8px 16px;font-size:0.85rem}
+      .top-slogan .slogan-title{font-size:14px}.top-slogan .slogan-sub{font-size:12px}
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="sr-only" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-  <!-- ===== Top Slogan Belt ===== -->
-  <div class="top-slogan" role="region" aria-label="Slogan">
-    <div class="slogan-title">IFU YIGIKOMA NZIZA CYANE YIMVANGE</div>
-    <div class="slogan-sub">amasaka, ingano, ibigori, soya | irimo intunga mubiri nyinshi cyane</div>
+  <!-- TOP SLOGAN BELT -->
+  <div class="top-slogan">
+    <div>
+      <span class="slogan-title">IFU YIGIKOMA NZIZA CYANE!</span>
+      <span class="slogan-sub">Amasaka, Ingano, Ibigori, Soya - Hygienically Packed</span>
+    </div>
   </div>
 
-  <!-- PARTICLES (subtle confetti) -->
-  <div id="particles" aria-hidden="true"></div>
-
-  <!-- ===== Header (Logo + Nav + Contact) ===== -->
-  <header class="site-header" role="banner">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#home" class="brand" aria-label="M.Joyce Trading Ltd home">
-        <div class="logo-mark" aria-hidden="true">M</div>
+      <div class="brand">
+        <div class="logo-mark">MJ</div>
         <div>
           <div class="brand-name">M.Joyce Trading Ltd</div>
-          <div><a href="tel:+250785526771" class="brand-phone">+250 785 526 771</a></div>
+          <div class="brand-phone">+250 785 526 771</div>
         </div>
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
+      </div>
+      <nav class="main-nav">
+        <a href="#products">Products</a>
         <a href="#about">About</a>
-        <a href="#packages">Products</a>
-        <a href="#nutrition">Nutrition</a>
-        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <main id="main">
-    <section id="home" class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <img src="JOYCE 10 ok.webp" alt="welcome" loading="lazy">
-      <!-- floating leaves & grains dedicated to hero -->
-      <div id="hero-float" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <h1 class="hero-title">Nutritious Porridge Flours</h1>
-        <p class="hero-sub">Wheat, Maize, Sorghum & Soya — Hygienically Packed • Produced by <strong>M.Joyce Trading LTD</strong></p>
-        <div class="hero-cta" role="group" aria-label="Primary calls to action">
-          <a href="#contact" class="btn btn-light">Contact Us</a>
-          <a href="#packages" class="btn btn-brand">Order Now</a>
-        </div>
-      </div>
-      <div class="wave-container" aria-hidden="true">
-        <div class="wave"></div>
-        <div class="wave wave2"></div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 id="about-title" class="section-title">About Mjoyeuse Trading</h2>
-        <p class="section-sub">We provide premium-quality porridge flours for healthy nutrition, sourced from the best grains. Delivery to supermarkets, alimentation, boutiques & food shops in Kigali and all provinces in Rwanda.</p>
-        <ul class="about-bullets" style="max-width:800px;margin:0 auto 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;list-style: none;">
-          <li>✅ 100% Natural Ingredients</li>
-          <li>✅ Hygienically Packed</li>
-          <li>✅ Affordable & Accessible</li>
-          <li>✅ Available in Bulk or Retail</li>
-        </ul>
-        <div style="text-align:center">
-          <a href="#packages" class="btn btn-brand">Explore Products</a>
-          <a href="#contact" class="btn btn-outline" style="margin-left:8px">Get in Touch</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PRODUCTS / PACKAGES ===== -->
-    <section id="packages" class="section packages" aria-labelledby="products-title">
-      <div class="container">
-        <h2 id="products-title" class="section-title">Our Porridge Products</h2>
-        <p class="section-sub">Choose from our nutritious flours. Tap a product to order instantly on WhatsApp.</p>
-        <div class="cards" role="list">
-          <article class="card" role="listitem" style="--card-accent:#ffb703">
-            <div class="card-badge">Famillia</div>
-            <img src="JOYCE7.jpeg" alt="Famillia porridge flour" loading="lazy">
-            <h3>Famillia</h3>
-            <p>Balanced blend for daily porridge. <strong>1500 RWF / kg</strong></p>
-            <ul class="chip-list"><li>1kg</li><li>2kg</li><li>5kg</li></ul>
-            <div class="order"><a class="btn btn-light" href="https://wa.me/250785526771?text=Ndashaka%20guhaha%20%2F%20I%20want%20to%20order:%20Famillia%20(1500%20RWF%2Fkg)" target="_blank" rel="noopener">Order via WhatsApp</a></div>
-          </article>
-          <article class="card" role="listitem" style="--card-accent:#8ef6e4">
-            <div class="card-badge">Doudou First Quality</div>
-            <img src="JOYCE 10 ok.webp" alt="Doudou First Quality flour" loading="lazy">
-            <h3>Doudou First Quality</h3>
-            <p>Finest selection for superior taste. <strong>2500 RWF / kg</strong></p>
-            <ul class="chip-list"><li>1kg</li><li>2kg</li><li>5kg</li></ul>
-            <div class="order"><a class="btn btn-light" href="https://wa.me/250785526771?text=Ndashaka%20guhaha%20%2F%20I%20want%20to%20order:%20Doudou%20First%20Quality%20(2500%20RWF%2Fkg)" target="_blank" rel="noopener">Order via WhatsApp</a></div>
-          </article>
-          <article class="card" role="listitem" style="--card-accent:#c0f985">
-            <div class="card-badge">Doudou</div>
-            <img src="JOYCE 10 ok.webp" alt="Doudou flour" loading="lazy">
-            <h3>Doudou</h3>
-            <p>Nourishing blend loved by families. <strong>2000 RWF / kg</strong></p>
-            <ul class="chip-list"><li>1kg</li><li>2kg</li><li>5kg</li></ul>
-            <div class="order"><a class="btn btn-light" href="https://wa.me/250785526771?text=Ndashaka%20guhaha%20%2F%20I%20want%20to%20order:%20Doudou%20(2000%20RWF%2Fkg)" target="_blank" rel="noopener">Order via WhatsApp</a></div>
-          </article>
-          <article class="card" role="listitem" style="--card-accent:#ffd166">
-            <div class="card-badge">Doudou</div>
-            <img src="JOYCE5.jpeg" alt="Doudou basic flour" loading="lazy">
-            <h3>Doudou (Basic)</h3>
-            <p>Great value everyday option. <strong>1100 RWF / kg</strong></p>
-            <ul class="chip-list"><li>1kg</li><li>2kg</li><li>5kg</li></ul>
-            <div class="order"><a class="btn btn-light" href="https://wa.me/250785526771?text=Ndashaka%20guhaha%20%2F%20I%20want%20to%20order:%20Doudou%20Basic%20(1100%20RWF%2Fkg)" target="_blank" rel="noopener">Order via WhatsApp</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== NUTRITION ===== -->
-    <section id="nutrition" class="section nutrition" aria-labelledby="nutrition-title">
-      <div class="container">
-        <h2 id="nutrition-title" class="section-title">Nutrition &amp; Benefits</h2>
-        <p class="section-sub">Our flours are rich in essential nutrients for a healthy family diet.</p>
-        <div class="cards">
-          <div class="card"><h3>Protein</h3><p>Supports growth and muscle development, especially for children.</p></div>
-          <div class="card"><h3>Fiber</h3><p>Improves digestion and keeps you feeling full longer.</p></div>
-          <div class="card"><h3>Vitamins &amp; Minerals</h3><p>Boosts immunity and overall health with essential micronutrients.</p></div>
-          <div class="card"><h3>Gluten-Free Options</h3><p>Perfect for people with gluten intolerance or celiac disease.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== GALLERY ===== -->
-    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
-      <div class="container">
-        <h2 id="gallery-title" class="section-title">Gallery</h2>
-        <p class="section-sub">Our products, packaging, and happy customers.</p>
-        <div class="cards">
-          <div class="card"><img src="JOYCE1.jpeg" alt="Healthy porridge" loading="lazy"></div>
-          <div class="card"><img src="JOYCE2.jpeg" alt="Product packaging" loading="lazy"></div>
-          <div class="card"><img src="JOYCE6.jpeg" alt="Breakfast with porridge" loading="lazy"></div>
-          <div class="card"><img src="JOYCE3.jpeg" alt="Grain sourcing" loading="lazy"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title" class="section-title">Contact Us</h2>
-        <p class="section-sub">Reach out to order, inquire, or get more information.</p>
-        <div class="grid-2">
-          <div class="contact-info">
-            <ul>
-              <li><strong>Company:</strong> M.Joyce Trading LTD</li>
-              <li><strong>Manager:</strong> M. Joyeuse</li>
-              <li><strong>Phone:</strong> <a href="tel:+250785526771">+250 785 526 771</a></li>
-              <li><strong>WhatsApp:</strong> <a href="https://wa.me/250785526771" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
-              <li><strong>Email:</strong> <a href="mailto:info@mjoyeuse.rw">info@mjoyeuse.rw</a></li>
-              <li><strong>Location:</strong> Kigali, Gasabo, Rwanda</li>
-              <li><strong>Delivery:</strong> Supermarkets • Alimentation • Boutiques • Food shops — Kigali & all provinces</li>
-            </ul>
-          </div>
-          <form action="https://formspree.io/f/moqrxyz" method="POST" class="contact-form" aria-label="Contact form">
-            <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc;">
-            <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc;">
-            <textarea name="message" placeholder="Your Message" required rows="6" style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc;resize:vertical;"></textarea>
-            <button type="submit" class="btn btn-brand">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PLACEHOLDERS for footer links ===== -->
-    <section id="privacy" class="placeholder section" aria-labelledby="privacy-title">
-      <div class="container">
-        <h2 id="privacy-title" class="section-title">Privacy Policy</h2>
-        <p class="section-sub">We respect your privacy. Any details you share for orders or inquiries are used only to process and deliver your request.</p>
-        <p style="text-align:center">Full policy coming soon.</p>
-      </div>
-    </section>
-
-    <section id="policies" class="placeholder section" aria-labelledby="policies-title">
-      <div class="container">
-        <h2 id="policies-title" class="section-title">Policies</h2>
-        <p class="section-sub">Production, sales, and delivery guidelines to ensure quality and safety.</p>
-        <p style="text-align:center">Detailed policies will be published here.</p>
-      </div>
-    </section>
-
-    <section id="health" class="placeholder section" aria-labelledby="health-title">
-      <div class="container">
-        <h2 id="health-title" class="section-title">Health Advices</h2>
-        <p class="section-sub">Nutrition tips for a balanced diet using our porridge blends.</p>
-        <p style="text-align:center">Articles and tips will be added here.</p>
-      </div>
-    </section>
-
-    <section id="blog" class="placeholder section" aria-labelledby="blog-title">
-      <div class="container">
-        <h2 id="blog-title" class="section-title">Blog / News</h2>
-        <p class="section-sub">Updates from M.Joyce Trading LTD, promotions, and announcements.</p>
-        <p style="text-align:center">Stay tuned for our latest posts.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-grid">
-      <div>
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#packages">Products</a></li>
-          <li><a href="#nutrition">Nutrition</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#privacy">Privacy</a></li>
-          <li><a href="#policies">Policies</a></li>
-          <li><a href="#health">Health Advices</a></li>
-          <li><a href="#blog">Blog / News</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company Info</h4>
-        <p>Produced by <strong>M.Joyce Trading LTD</strong><br/>Kigali, Rwanda</p>
-        <p>Phone: <a href="tel:+250785526771">+250 785 526 771</a><br/>Email: <a href="mailto:info@mjoyeuse.rw">mjoyce2000@gmail.com</a></p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Nutritious Porridge Flours</h1>
+      <p class="hero-sub">Delivery across Kigali and all provinces in Rwanda</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-light">See Products</a>
+        <a href="https://wa.me/250785526771" class="btn btn-brand">Order via WhatsApp</a>
       </div>
     </div>
-    <div class="container footer-bottom">&copy; <span id="year"></span> M.Joyce Trading Ltd — All Rights Reserved.</div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Flours</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-badge">Amasaka</div>
+          <h3>Premium Sorghum Flour</h3>
+          <p>Hygienically packed, perfect for breakfast porridges.</p>
+          <ul class="chip-list">
+            <li>500g</li><li>1kg</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-badge">Ibigori</div>
+          <h3>Maize Flour</h3>
+          <p>Freshly milled, nutritious, and easy to cook.</p>
+          <ul class="chip-list">
+            <li>500g</li><li>1kg</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-badge">Soya</div>
+          <h3>Soya Flour</h3>
+          <p>Rich in protein, ideal for porridge and baking.</p>
+          <ul class="chip-list">
+            <li>500g</li><li>1kg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>M.Joyce Trading Ltd is dedicated to providing hygienically packed, nutritious flours that cater to the Rwandan palate. Our products are made from locally sourced grains and delivered fresh to your doorstep.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <ul>
+          <li>Phone: +250 785 526 771</li>
+          <li>Email: info@mjoycetrading.rw</li>
+          <li>Location: Kigali, Rwanda</li>
+        </ul>
+        <a href="https://wa.me/250785526771" class="btn btn-brand">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 M.Joyce Trading Ltd. All Rights Reserved.
   </footer>
 
-  <!-- ===== Floating WhatsApp (Professional SVG) ===== -->
-<a
-  href="https://wa.me/250785526771?text=Hello%20from%20Your%20website%21%20I%20have%20a%20question."
-  target="_blank"
-  rel="noopener noreferrer"
-  class="whatsapp-btn"
-  aria-label="Chat on WhatsApp"
->
-  <!-- Professional circular WhatsApp glyph -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.83.735 5.579 2.135 7.991L0 32l8.265-2.136A15.9 15.9 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0Zm0 29.091a13.01 13.01 0 0 1-6.77-1.84l-.482-.287-4.9 1.268 1.308-4.771-.313-.49A12.9 12.9 0 0 1 3.03 16C3.03 8.693 8.693 3.03 16 3.03S28.97 8.693 28.97 16 23.307 29.091 16 29.091Z"/>
-    <path d="M24.259 19.772c-.379-.189-2.237-1.104-2.584-1.23-.347-.126-.6-.189-.853.189-.253.379-.98 1.23-1.202 1.483-.221.253-.442.284-.821.095-.379-.189-1.6-.59-3.048-1.882-1.127-1.006-1.888-2.249-2.11-2.628-.221-.379-.023-.584.166-.773.171-.171.379-.442.568-.663.189-.221.253-.379.379-.632.126-.253.063-.474-.032-.663-.095-.189-.853-2.054-1.169-2.815-.307-.739-.619-.639-.853-.651-.221-.011-.474-.013-.727-.013-.253 0-.663.095-1.01.474-.347.379-1.326 1.293-1.326 3.156s1.357 3.651 1.546 3.905c.189.253 2.674 4.084 6.481 5.724.907.392 1.612.626 2.163.802.908.289 1.732.248 2.384.151.727-.108 2.237-.913 2.55-1.794.315-.884.315-1.64.221-1.794-.095-.157-.347-.253-.727-.442Z"/>
-  </svg>
-</a>
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/250785526771" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28" />
+  </a>
 
   <script>
-    // YEAR in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Animate sections on scroll
-    const sections = document.querySelectorAll('.section');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
-    },{threshold:0.2});
-    sections.forEach(s=>io.observe(s));
-
-    // Mobile nav toggle
+    // NAV TOGGLE
     const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.main-nav');
-    navToggle?.addEventListener('click',()=>{
-      const open = nav.style.display === 'flex';
-      nav.style.display = open ? 'none' : 'flex';
-      navToggle.setAttribute('aria-expanded', String(!open));
-    });
+    const mainNav = document.querySelector('.main-nav');
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('show'));
 
-    // Particles
-    const particlesContainer = document.getElementById('particles');
-    for(let i=0;i<40;i++){
-      const p=document.createElement('div');
-      p.className='particle';
-      p.style.left=Math.random()*100+'%';
-      p.style.top= (20+Math.random()*70)+'%';
-      p.style.width=5+Math.random()*10+'px';
-      p.style.height=5+Math.random()*10+'px';
-      p.style.animationDuration=6+Math.random()*6+'s';
-      particlesContainer.appendChild(p);
-    }
-
-    // Hero floating leaves & grains
-    const heroFloat=document.getElementById('hero-float');
-    for(let i=0;i<24;i++){
-      const el=document.createElement('div');
-      el.className=(Math.random()>0.5?'leaf':'grain');
-      el.style.left=Math.random()*100+'%';
-      el.style.top=Math.random()*-20+'%';
-      el.style.animationDuration=(6+Math.random()*8)+'s';
-      el.style.animationDelay=Math.random()*6+'s';
-      heroFloat.appendChild(el);
-    }
+    // SCROLL ANIMATION
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){entry.target.classList.add('is-visible')}
+      });
+    }, {threshold:0.15});
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
-
-
-
-
